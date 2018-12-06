@@ -1,6 +1,6 @@
 #include <GL/glut.h>
-#include "mainScene.h"
-#include "mainHUD.h"
+#include "../headers/scene.h"
+#include "../headers/hud.h"
 
 /* Promenljiva koriscena za predstavljanje preostalog zivota */
 float remainingHealth = 0.0;
@@ -8,25 +8,17 @@ float remainingHealth = 0.0;
 /* Poziva se crtanje bara, indikatora i health-barova */
 void drawHUD() {
 
+	/* Bar i indikator */
 	glPushMatrix();
-
 		glTranslatef(0, -7, 0);
-
-
 		drawBar();
 		drawPrecisionIndicator();
-
-
 	glPopMatrix();
 
-	/* Health bars */
+	/* Health barovi */
 	glPushMatrix();
-
-
 		drawHealthBar1();
 		drawHealthBar2();
-
-
 	glPopMatrix();
 }
 

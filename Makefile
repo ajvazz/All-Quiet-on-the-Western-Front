@@ -1,30 +1,30 @@
-PROGRAM = mainProgram
+PROGRAM = WesternFront
 CC		= gcc
 CFLAGS	= -Wall -Wextra
 LDLIBS  = -lGL -lGLU -lglut -lm
 
-$(PROGRAM): mainProgram.o mainScene.o mainHUD.o mainTexture.o
+$(PROGRAM): main_program.o scene.o hud.o texture.o
 	$(CC) -o $@ $^ $(CFLAGS) $(LDLIBS)
 
-mainProgram.o: mainProgram.c
+main_program.o: source/main_program.c
 	$(CC) -c $<
 
-mainScene.o: mainScene.c mainScene.h
+scene.o: source/scene.c headers/scene.h
 	$(CC) -c $<
 
-mainHUD.o: mainHUD.c mainHUD.h
+hud.o: source/hud.c headers/hud.h
 	$(CC) -c $<
 
-mainTexture.o: mainTexture.c mainTexture.h
+texture.o: source/texture.c headers/texture.h
 	$(CC) -c $<
 
-mainMenu: mainMenu.o mainTexture.o
+main_menu: main_menu.o texture.o
 	$(CC) -o $@ $^ $(CFLAGS) $(LDLIBS)
 
-mainMenu.o: mainMenu.c
+main_menu.o: source/main_menu.c
 	$(CC) -c $<
 
 .PHONY: clean
 
 clean:
-	rm -rf $(PROGRAM) mainMenu *.o
+	rm -rf $(PROGRAM) main_menu *.o

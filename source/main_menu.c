@@ -2,7 +2,8 @@
 #include <stdlib.h>
 #include <math.h>
 #include <GL/glut.h>
-#include "mainTexture.h"
+
+#include "../headers/texture.h"
 
 /* Deklaracije callback funkcija. */
 static void on_keyboard(unsigned char key, int x, int y);
@@ -59,7 +60,7 @@ static void initialize(void)
     glGenTextures(1, &name);
 
     /* Cita se tekstura */
-    image_read(image, "cover.bmp");
+    image_read(image, "img/cover.bmp");
 
     /* Povezuje se ime sa teksturom */
     glBindTexture(GL_TEXTURE_2D, name);
@@ -137,7 +138,7 @@ static void on_keyboard(unsigned char key, int mouseX, int mousY) {
 
         /* Na ENTER se pokrece glavni program i igra pocinje */
         case 13:
-            system("./mainProgram");
+            system("./WesternFront");
             exit(0);
             break;
 

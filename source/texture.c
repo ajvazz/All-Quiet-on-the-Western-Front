@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-#include "mainTexture.h"
+#include "../headers/texture.h"
 
 Image *image_init(int width, int height) {
 

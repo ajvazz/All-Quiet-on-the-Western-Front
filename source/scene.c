@@ -1,8 +1,8 @@
 #include <GL/glut.h>
 #include <math.h>
 
-#include "mainScene.h"
-#include "mainTexture.h"
+#include "../headers/scene.h"
+#include "../headers/texture.h"
 
 static GLuint names[2];
 
@@ -458,7 +458,7 @@ void initializeTextures()
     glGenTextures(2, names);
 
     /* Cita se tekstura */
-    image_read(image, "ground.bmp");
+    image_read(image, "img/ground.bmp");
 
     /* Povezuje se ime sa prvom teksturom */
     glBindTexture(GL_TEXTURE_2D, names[0]);
@@ -473,7 +473,7 @@ void initializeTextures()
                  GL_RGB, GL_UNSIGNED_BYTE, image->pixels);
 
     /* Cita se druga tekstura */
-    image_read(image, "wild_west_town.bmp");
+    image_read(image, "img/wild_west_town.bmp");
 
     /* Povezuje se ime sa drugom teksturom */
     glBindTexture(GL_TEXTURE_2D, names[1]);

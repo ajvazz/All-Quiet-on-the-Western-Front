@@ -5,9 +5,9 @@
 #include <time.h>
 #include <math.h>
 
-#include "mainTexture.h"
-#include "mainScene.h"
-#include "mainHUD.h"
+#include "../headers/texture.h"
+#include "../headers/scene.h"
+#include "../headers/hud.h"
 
 /* Makroi za tajmer */
 #define TIME_TO_WAIT 10
@@ -109,12 +109,11 @@ int main(int argc, char **argv) {
 
 static void on_display(void) {
 
-
 	/******************************************************************************
 		Prvo se projekcija podesava na perspektivnu, a nakon crtanja 3D objekata
 		se postavlja na ortografsku projekciju za crtanje 2D HUD-a.
 
-		Da se slika nastala ortografskom projekcijom ne bi presecala sa slikom 
+		Da je slika nastala ortografskom projekcijom ne bi se presecala sa slikom 
 		koja je nacrtana pre nje, potrebno je pre ortografske projekcije iskljuciti
 		poredjenje poligona prema z-koordinati, tj DEPTH_DEST. Iskljucuje se i 
 		osvetljenje, jer nije potrebno.
@@ -133,7 +132,6 @@ static void on_display(void) {
 		glLoadIdentity();
 		gluLookAt(0,3,7,  0,1,0,  0,1,0);
 
-
 	drawScene();
 	drawCowboys();
 
@@ -147,7 +145,6 @@ static void on_display(void) {
 	glMatrixMode(GL_PROJECTION);
 		glLoadIdentity();
 		glOrtho(-10, 10, -10, 10, -10, 10);
-
 
 	drawHUD();
 
@@ -183,7 +180,6 @@ static void on_keyboard(unsigned char key, int mouseX, int mouseY) {
 			}
 			break;
 
-
 		/* SPACE - zaustavlja se indikator, ispaljuje se metak */
 		case 32:
 			
@@ -201,13 +197,10 @@ static void on_keyboard(unsigned char key, int mouseX, int mouseY) {
 			
 			break;
 
-
 		default:
 			break;
 	}
-}
-
-
+} // on_keyboard
 
 static void on_reshape(int width, int height) {
 
@@ -217,8 +210,6 @@ static void on_reshape(int width, int height) {
 
 	glViewport(0, 0, width, height);
 }
-
-
 
 static void on_timer(int value) {
 
@@ -239,7 +230,6 @@ static void on_timer(int value) {
 			glutTimerFunc(TIME_TO_WAIT, on_timer, START_GAME);
 		}
 	}
-
 
 	/* Event handler za ispaljivanja metka */
 	if (value == FIRE_BULLET) {
@@ -290,8 +280,7 @@ static void on_timer(int value) {
 		if (bullet_animation == 1) {
 			glutTimerFunc(TIME_TO_WAIT, on_timer, FIRE_BULLET);
 		}
-	}
-
+	} // if (value == FIRE_BULLET)
 
 	/* Event handler za dizanje ruke */
 	if (value == ARM_UP) {
@@ -306,7 +295,6 @@ static void on_timer(int value) {
 			armMovementActive = 0;
 		}
 	}
-
 
 	/* Event handler za spustanje ruke */
 	if (value == ARM_DOWN) {
@@ -338,7 +326,7 @@ static void on_timer(int value) {
 		if (pistolHolster == 0) {
 			glutTimerFunc(TIME_TO_WAIT, on_timer, ARM_DOWN);
 		}
-	}
+	} // if (value == ARM_DOWN)
 
 	/* Event handler za azuriranje indikatora */
 	if (value == UPDATE_INDICATOR) {
@@ -361,10 +349,9 @@ static void on_timer(int value) {
 		if (indX1 >= 2.4 || indX1 <= -2.4) {
 			directionVector *= -1;
 		}
-	}
+	} // if (value == UPDATE_INDICATOR)
 
-}
-
+} // on_timer
 
 static void initializeLight(void) {
 
