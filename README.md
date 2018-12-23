@@ -16,9 +16,9 @@ ___
 
 **To install _OpenGL_, run in terminal:**
 
-```$ sudo apt-get update```
+```sudo apt-get update```
 
-```$ sudo apt-get install libglu1-mesa-dev freeglut3-dev mesa-common-dev```
+```sudo apt-get install libglu1-mesa-dev freeglut3-dev mesa-common-dev```
 
 **To install _gcc_ and _make_, run:**
 
@@ -26,13 +26,13 @@ ___
 
 ## Setting up
 You can clone this project by copying its url, opening up your terminal and using it with `git clone <url>` command. Or just execute this command:
-```$ git clone https://github.com/ajvazz/All-Quiet-on-the-Western-Front.git```.
+```git clone https://github.com/ajvazz/All-Quiet-on-the-Western-Front.git```.
 
-Then, navigate to newly created folder, and then run _make_: 
-`$ make` or `$ make mainProgram` to compile all files need for the game itself, and then run: 
-```$ make mainMenu``` to compile main menu program.
+Then, navigate to newly created folder, and run _make_: 
+`make` or `make mainProgram` to compile all files need for the game itself, and then: 
+```make mainMenu``` to compile main menu program.
 
-Then, run `$ ./mainMenu` to start the game!
+Then, `./mainMenu` to start the game!
 
 ## Game Instructions
 When you start the game, main menu presents options to the user to start or exit the game. Upon clicking `ENTER`, the game is started.
