@@ -22,7 +22,7 @@ ___
 
 **To install _gcc_ and _make_, run:**
 
-```$ sudo apt-get install build-essential```
+```sudo apt-get install build-essential```
 
 ## Setting up
 You can clone this project by copying its url, opening up your terminal and using it with `git clone <url>` command. Or just execute this command:
