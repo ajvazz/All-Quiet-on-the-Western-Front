@@ -4,19 +4,17 @@ This was a project done for Computer Graphics (2017) course at Faculty of Mathem
 It is a simple two-player game implemented in C using OpenGL.
 
 _The idea is to deal more damage to the opponent, which can be done by using the indicator at the bottom of the screen. There are three levels of damage that can be inflicted:_
-* _**high** - center of green_
-* _**medium** - greenish/reddish_
 * _**low** - either side of red part of the bar_
+* _**medium** - greenish/reddish_
+* _**high** - center of green_
 ___
 
 ## Requirements
-* **OpenGL** -  Graphics rendering API used for this project
-* **gcc** - Compiler system used for this project. Others may work as well.
-* **make** - Build automation tool
+* **OpenGL** -  graphics rendering API used for this project
+* **gcc** - compiler system used for this project. Others may work as well.
+* **make** - build automation tool
 
 **To install _OpenGL_, run in terminal:**
-
-```sudo apt-get update```
 
 ```sudo apt-get install libglu1-mesa-dev freeglut3-dev mesa-common-dev```
 
@@ -29,16 +27,16 @@ You can clone this project by copying its url, opening up your terminal and usin
 ```git clone https://github.com/ajvazz/All-Quiet-on-the-Western-Front.git```.
 
 Then, navigate to newly created folder, and run _make_: 
-`make` or `make mainProgram` to compile all files need for the game itself, and then: 
+`make` or `make mainProgram` to compile all files needed for the game itself, and then: 
 ```make mainMenu``` to compile main menu program.
 
-Then, `./mainMenu` to start the game!
+Then, type `./mainMenu` to start the game!
 
 ## Game Instructions
 When you start the game, main menu presents options to the user to start or exit the game. Upon clicking `ENTER`, the game is started.
-_**When it is opened, you are required to click `ENTER`, `G` or `g` to initialize animations!**_
+_**When it is opened, you are required to click `ENTER`, `G` or `g` to initialize the game!**_
 
-The idea is to win in a gun duel between two weird, faceless cowboys in a town that is apparently to small for both of them. That can be done by dealing more damage to the opponent, using pinpoint precision and good timing :) The more cowboys are closer to death the more chaotic will the indicator move.
+The idea is to win in a gun duel between two weird, faceless cowboys in a town that is apparently to small for both of them. That can be done by dealing more damage to the opponent, using pinpoint precision and good timing. The more cowboys are closer to death, the more chaotic will the indicator move.
 
 ## Controls
 
