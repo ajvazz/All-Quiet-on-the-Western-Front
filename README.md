@@ -32,6 +32,9 @@ Then, navigate to newly created folder, and run _make_:
 
 Then, type `./mainMenu` to start the game!
 
+## Preview
+![](preview.gif)
+
 ## Game Instructions
 When you start the game, main menu presents options to the user to start or exit the game. Upon clicking `ENTER`, the game is started.
 _**When it is opened, you are required to click `ENTER`, `G` or `g` to initialize the game!**_
